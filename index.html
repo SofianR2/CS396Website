@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hotspur House</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/carousel.js" defer></script>
+	<script src="js/accessibility.js" defer></script>
+</head>
+  <body>
+ <!-- This is the header on every page -->
+	<header>
+		<nav class="site-nav">
+			<a href="index.html">Home</a>
+			<a href="history.html">History</a>
+			<a href="team.html">Team Info</a>
+			<a href="contact.html">Contact</a>
+			<a href="https://shop.tottenhamhotspur.com/?utm_source=thfc&utm_medium=quicklink&utm_campaign=retail_alwayson_1_2024_11&utm_content=shop">Shop</a>
+		</nav>
+	</header>
+<!-- main page content -->
+	<main>
+		<h1>Hotspur House</h1>
+		<!-- carousel that switches through different news articles -->
+		<section class = "latest-news">
+			<div class ="carousel">
+				<!--Articles to be displayed-->
+				<article class="carousel-item active">
+					<img src="images/EuropaLeague.jpg" alt="Spurs lift the Europa League Trophy">
+					<h2>
+						<a href="article.html">Champions of Europe!</a>
+					</h2>
+					<p>Tottenam Hotspur lift the Europa League Trophy!</p>
+				</article>
+				<article class="carousel-item">
+					<img src="images/TakaiSigning.jpg" alt="Kota Takai Signing">
+					<h2>
+						<a href="article.html">New Signing: Kota Takai</a>
+					</h2>
+					<p>Spurs secure exciting new defender from Kawasaki Frontale!</p>
+				</article>
+			<!-- Carousel Navigation -->
+			<div class="carousel-nav">
+				<div class="carousel-dots">
+					<button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+					<button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+				</div>
+			</div>				
+			</div>
+			<!-- Premier League Standings Table -->
+			<aside class="league-table-container">
+				<h2>Premier League Table</h2>
+				<div class="league-table">
+					<div id="scoreaxis-widget-ade4f" style="border-width:1px;border-color:rgba(0, 0, 0, 0.15);border-style:solid;border-radius:8px;padding:10px;background:rgb(255, 255, 255);width:100%"><iframe id="Iframe" src="https://www.scoreaxis.com/widget/standings-widget/8?autoHeight=1&amp;inst=ade4f" style="width:100%;border:none;transition:all 300ms ease"></iframe><script>window.addEventListener("DOMContentLoaded",event=>{window.addEventListener("message",event=>{if(event.data.appHeight&&"ade4f"==event.data.inst){let container=document.querySelector("#scoreaxis-widget-ade4f iframe");container&&(container.style.height=parseInt(event.data.appHeight)+"px")}},!1)});</script></div><div style="font-size: 12px; font-family: Arial, sans-serif; text-align: left;">Data provided by <a target="_blank" href="https://www.scoreaxis.com/">Scoreaxis</a></div>
+				</div>
+			</aside>
+		</section>
+		<section class="motto-section">
+			<div class="motto-content">
+				<h2>To Dare is to Do</h2>
+				<p>
+					We are Tottenham Hotspur. Born from the spirit of North London in 1882, we carry the legacy of footballing excellence and unwavering determination. Our club represents more than just a team – we are a family united by passion, tradition, and the relentless pursuit of glory. From the hallowed grounds of White Hart Lane to our magnificent new home at Tottenham Hotspur Stadium, we have always played with style, flair, and the courage to dream big. Our motto "To Dare is to Do" isn't just words – it's our way of life, our commitment to attacking football, and our refusal to accept anything less than our best. We are the Lilywhites, the Spurs, and we carry the hopes and dreams of millions around the world. Together, we rise, we fight, and we dare to achieve the impossible.
+				</p>
+			</div>
+			<div>
+				<img src="images/son.avif" alt="Our Captain, Son-Heung Min" class="motto-image">
+			</div>
+			<div class="motto-button-container">
+				<a href="history.html" class="btn btn-primary">Our History</a>
+			</div>
+		</section>
+    </main>
+ <!-- This is the footer on every page -->
+	<footer class="site-footer">
+    	<p>&copy; 2025 Sofian Rahhali. All rights reserved.</p>
+  	</footer>
+  </body>
+</html>

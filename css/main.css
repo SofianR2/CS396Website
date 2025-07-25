@@ -1,0 +1,901 @@
+/* Global Reset & Box Sizing */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* CSS Variables for Font Settings */
+:root {
+	/* Font Settings */
+	--font-family: Arial, sans-serif;
+	--font-size-base: 16px;
+	--font-size-small: 0.875rem;
+	--font-size-large: 1.125rem;
+	--font-size-xlarge: 1.25rem;
+}
+
+/* Font Size Classes */
+.font-size-small {
+	--font-size-base: 14px;
+}
+
+.font-size-medium {
+	--font-size-base: 16px;
+}
+
+.font-size-large {
+	--font-size-base: 18px;
+}
+
+.font-size-xlarge {
+	--font-size-base: 20px;
+}
+
+/* Font Family Classes */
+.font-arial {
+	--font-family: Arial, sans-serif;
+}
+
+.font-helvetica {
+	--font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.font-georgia {
+	--font-family: Georgia, "Times New Roman", serif;
+}
+
+.font-verdana {
+	--font-family: Verdana, Geneva, sans-serif;
+}
+
+.font-tahoma {
+	--font-family: Tahoma, Geneva, sans-serif;
+}
+
+html {
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
+	line-height: 1.6;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	color: #333;
+	background: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	transition: font-size 0.3s ease, font-family 0.3s ease;
+}
+
+main {
+	padding: 0 10rem;
+	flex: 1;
+}
+
+/* Responsive margins and padding */
+@media (max-width: 1200px) {
+	main {
+		padding: 0 5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+		padding: 0 2rem;
+	}
+	
+	.history-intro {
+		gap: 1rem;
+		padding: 1rem 0;
+	}
+	
+	.motto-section {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		padding: 1.5rem 0;
+	}
+	
+	.motto-image {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+	
+	.carousel-item h2 a {
+		font-size: 1.3rem;
+	}
+	
+	.carousel-item p {
+		font-size: 0.95rem;
+	}
+	
+	.league-table-container {
+		max-height: 350px;
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding: 0 1rem;
+	}
+	
+	.history-intro {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 0.5rem 0;
+	}
+	
+	.history-intro > div:last-child {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	
+	.site-nav {
+		padding: 0.5rem;
+		gap: 0.25rem;
+	}
+	
+	.site-nav a {
+		font-size: 0.8rem;
+		padding: 0.4rem 0.5rem;
+	}
+	
+	.motto-section {
+		padding: 1rem 0;
+		gap: 1rem;
+	}
+	
+	.motto-image {
+		max-width: 250px;
+	}
+	
+	.motto-content h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.motto-content p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+	
+	.carousel-item h2 {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	
+	.carousel-item p {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	
+	.carousel-item h2 a {
+		font-size: 1.2rem;
+	}
+	
+	.carousel-item p {
+		font-size: 0.9rem;
+	}
+	
+	.motto-button-container .btn {
+		padding: 0.8rem 1.5rem;
+		font-size: 1rem;
+	}
+	
+	.league-table-container {
+		max-height: 300px;
+	}
+	
+	.contact-intro h1 {
+		font-size: 2rem;
+	}
+	
+	.contact-form {
+		padding: 1.5rem;
+		margin: 0 0.5rem;
+	}
+	
+	.form-group input,
+	.form-group textarea {
+		padding: 0.6rem;
+		font-size: 0.95rem;
+	}
+	
+	.contact-form button {
+		padding: 0.8rem;
+		font-size: 1rem;
+	}
+}
+
+/* Utility Container */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+/* Site Navigation */
+.site-nav{
+	text-align: right;
+	background: #002244;
+	padding: 1rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.site-nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.9rem;
+	padding: 0.5rem 0.75rem;
+	white-space: nowrap;
+	transition: background-color 0.3s ease;
+	border-radius: 4px;
+}
+
+.site-nav a:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Accessibility Controls */
+.accessibility-controls {
+	position: fixed;
+	top: 80px;
+	right: 80px;
+	background: white;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	padding: 1rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	min-width: 250px;
+	display: none;
+}
+
+.accessibility-controls.open {
+	display: block;
+}
+
+.accessibility-toggle {
+	position: fixed;
+	top: 80px;
+	right: 20px;
+	background: #002244;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	z-index: 1001;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	text-align: center;
+	line-height: 50px;
+	padding-left: 2px;
+}
+
+.accessibility-toggle:hover {
+	background: #1a4a6b;
+	transform: scale(1.1);
+}
+
+.accessibility-toggle {
+	font-size: 1.5rem;
+}
+
+.control-group {
+	margin-bottom: 1rem;
+}
+
+.control-group:last-child {
+	margin-bottom: 0;
+}
+
+.control-group label {
+	display: block;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
+}
+
+.control-group select,
+.control-group button {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background: white;
+	color: #333;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.control-group select:focus,
+.control-group button:focus {
+	outline: none;
+	border-color: #002244;
+	box-shadow: 0 0 0 2px rgba(0, 34, 68, 0.1);
+}
+
+.control-group button {
+	background: #002244;
+	color: white;
+	border: none;
+	font-weight: bold;
+}
+
+.control-group button:hover {
+	background: #1a4a6b;
+}
+
+/* Font size dropdown styling */
+.font-size-select {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background: white;
+	color: #333;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.font-size-select:focus {
+	outline: none;
+	border-color: #002244;
+	box-shadow: 0 0 0 2px rgba(0, 34, 68, 0.1);
+}
+
+.accessibility-title {
+	font-size: 1rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 1rem;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0.5rem;
+}
+
+/* Carousel + League Table */
+.latest-news {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+	padding: 2rem 0;
+}
+
+.carousel {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+}
+
+.carousel-item {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+	display: block;
+	opacity: 1;
+}
+
+.carousel-item img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 1000px;
+	object-fit: cover;
+}
+
+.carousel-item h2 {
+	margin: 1rem 0 0.5rem 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.carousel-item h2 a {
+	color: #002244;
+	text-decoration: none;
+	font-size: 1.5rem;
+	transition: color 0.3s ease;
+}
+
+.carousel-item h2 a:hover {
+	color: #1a4a6b;
+}
+
+.carousel-item p {
+	color: #666;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin-top: auto;
+	background: rgba(255, 255, 255, 0.95);
+	border-top: 1px solid #eee;
+}
+
+.carousel-dots {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #ddd;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.dot.active {
+	background: #002244;
+	transform: scale(1.2);
+}
+
+.dot:hover {
+	background: #1a4a6b;
+}
+
+.league-table-container {
+	background: #fafafa;
+	border: 3px solid #ddd;
+	padding: 1rem;
+	max-height: 650px;
+	overflow-y: auto;
+}
+
+/* Motto Section */
+.motto-section {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+	align-items: start;
+	padding: 2rem 0;
+}
+.motto-content p {
+	margin-bottom: 1rem;
+}
+.motto-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	align-items: center;
+	min-width: 200px;
+}
+
+/* Responsive design for motto section */
+@media (max-width: 768px) {
+	.motto-section {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	
+	.motto-image {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.motto-section {
+		padding: 1rem 0;
+	}
+	
+	.motto-image {
+		max-width: 250px;
+	}
+}
+
+/* Motto Button Container */
+.motto-button-container {
+	grid-column: 1;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.motto-button-container .btn {
+	padding: 1rem 2rem;
+	font-size: 1.1rem;
+	font-weight: bold;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+}
+
+.motto-button-container .btn:hover {
+	background: #1a4a6b;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 34, 68, 0.3);
+}
+
+/* Buttons */
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	padding: 0.75rem 1.5rem;
+	border: none;
+	cursor: pointer;
+}
+.btn-primary {
+	background: #002244;
+	color: #fff;
+}
+
+/* Footer */
+.site-footer {
+	background: #002244;
+	color: #fff;
+	text-align: center;
+	padding: 1rem 0;
+}
+.site-footer a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* History Section */
+.history-intro {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: start;
+	gap: 3rem;
+	padding: 2rem 0;
+}
+
+.history-intro > div:last-child {
+	padding-right: 2rem;
+}
+
+.history-links {
+	background: #f8f9fa;
+	border-radius: 8px;
+	padding: 1.5rem;
+	border-left: 4px solid #002244;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jump-links-title {
+	color: #002244;
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.jump-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.jump-links li {
+	margin-bottom: 0.75rem;
+}
+
+.jump-links a {
+	display: block;
+	padding: 0.75rem 1rem;
+	background: white;
+	color: #002244;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1.1rem;
+	border-radius: 6px;
+	border: 2px solid #e0e0e0;
+	transition: all 0.3s ease;
+}
+
+.jump-links a:hover {
+	background: #002244;
+	color: white;
+	border-color: #002244;
+	transform: translateX(5px);
+}
+
+.history-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	align-items: end;
+}
+
+/* History Content Sections */
+.history-section {
+	padding: 2rem 0;
+}
+.history-section .container {
+	text-align: left;
+}
+
+.history-section h2 {
+	margin-bottom: 1rem;
+	color: #002244;
+}
+
+/* Trophies Section Styling */
+.trophies-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	margin: 2rem 0;
+}
+
+.trophy-category {
+	background: white;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	border-left: 4px solid #002244;
+}
+
+.trophy-category h3 {
+	color: #002244;
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
+	font-weight: bold;
+}
+
+.trophy-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.trophy-list li {
+	padding: 0.5rem 0;
+	border-bottom: 1px solid #f0f0f0;
+	font-size: 1rem;
+	line-height: 1.4;
+}
+
+.trophy-list li:last-child {
+	border-bottom: none;
+}
+
+.trophy-list strong {
+	color: #002244;
+	font-weight: 600;
+}
+
+.trophy-summary {
+	background: #f8f9fa;
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin-top: 2rem;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	border-left: 4px solid #002244;
+}
+
+/* Team Info Section */
+.player-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4rem;
+}
+
+.player-card {
+	flex: 1 1 200px;
+	max-width: 300px;
+}
+
+.player-photo {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Contact Section*/
+.contact-intro {
+	text-align: center;
+	padding: 2rem 0;
+}
+
+.contact-intro h1 {
+	color: #002244;
+	margin-bottom: 1rem;
+	font-size: 2.5rem;
+}
+
+.contact-intro p {
+	font-size: 1.1rem;
+	color: #666;
+	margin-bottom: 0.5rem;
+}
+
+.contact-intro a {
+	color: #002244;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.contact-intro a:hover {
+	color: #1a4a6b;
+}
+
+.contact-subtext {
+	font-style: italic;
+	color: #888;
+	font-size: 1rem;
+}
+
+.contact-form-section {
+	display: flex;
+	justify-content: center;
+	padding: 2rem 0;
+}
+
+.contact-form {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	padding: 2.5rem;
+	max-width: 500px;
+	width: 100%;
+	border: 1px solid #e0e0e0;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+	color: #002244;
+	font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 2px solid #e0e0e0;
+	border-radius: 6px;
+	font-size: 1rem;
+	font-family: inherit;
+	transition: all 0.3s ease;
+	box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	outline: none;
+	border-color: #002244;
+	box-shadow: 0 0 0 3px rgba(0, 34, 68, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+	color: #999;
+}
+
+.form-group textarea {
+	resize: vertical;
+	min-height: 120px;
+}
+
+.contact-form button {
+	display: block;
+	margin: 2rem auto 0 auto;
+	width: 100%;
+	padding: 1rem;
+	font-size: 1.1rem;
+	font-weight: bold;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+	background: #1a4a6b;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 34, 68, 0.3);
+}
+
+/* Article Section */
+.article-page {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+	align-items: start;
+	padding: 2rem;
+}
+
+.article-image img {
+	max-width: 500px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Suggested Articles Section*/
+.suggested-grid img {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.suggested-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	justify-content: flex-start;
+	margin-top: 1rem;
+}
+.suggested-card {
+	flex: 0 0 auto;
+	max-width: 250px;
+}
+
+/* Specific mobile optimization for 430px width */
+@media (max-width: 430px) {
+	.site-nav {
+		padding: 0.4rem;
+		gap: 0.2rem;
+		justify-content: center;
+	}
+	
+	.site-nav a {
+		font-size: 0.75rem;
+		padding: 0.3rem 0.4rem;
+	}
+	
+	/* Mobile accessibility controls */
+	.accessibility-controls {
+		top: 70px;
+		right: 70px;
+		min-width: 200px;
+		padding: 0.75rem;
+	}
+	
+	.accessibility-toggle {
+		top: 50px;
+		right: 10px;
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		padding-left: 2px;
+	}
+	
+	.font-size-select {
+		padding: 0.4rem;
+		font-size: 0.8rem;
+	}
+	
+	.control-group select,
+	.control-group button {
+		padding: 0.4rem;
+		font-size: 0.8rem;
+	}
+}

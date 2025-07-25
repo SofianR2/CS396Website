@@ -1,0 +1,12 @@
+Accessibility Features:
+I added an accessibility menu that lets users adjust both
+the font size and family. When the user clicks the button
+with the gear icon, a smalll pop up appears that allows
+for adjusting the font size (small, medium, large, extra large), 
+and the font family (Arial, Helvetica, Georgia, Verdana, Tahoma).
+
+Additionally, there is a reset button at the bottom of the popup
+menu that restores the default font size and family (medium and arial).
+
+The pop up menu should be accessible by keyoard by tabbing to it, and 
+can be opened by pressing enter, and closed by pressing escape. 
